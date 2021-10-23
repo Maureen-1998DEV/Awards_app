@@ -1,14 +1,41 @@
-<ul class="nav justify-content-end">
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="#">Active</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-    </li>
-  </ul>
+{%load static%}
+{% load bootstrap5 %}
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light bg-light">
+
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+    <img src="{% static 'images/wheat.png' %}" alt="" width="40" height="40">
+    <span class="navbar-text">
+      Awards
+    </span>
+  </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="#">LOCATION</a>
+
+        </li>
+      </ul>
+
+      <ul class="navbar-nav left">
+        <a class="nav-item nav-link ml-auto social" href="https://github.com/Maureen-1998DEV" target="_blank"><i class="fab fa-github"></i></a>
+        <a class="nav-item nav-link ml-auto social" href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a class="nav-item nav-link ml-auto social" href="https://twitter.com/Maureen Ougo" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a class="nav-item nav-link ml-auto social" href="https://www.facebook.com/Maureen Ougo" target="_blank"><i class="fab fa-facebook"></i></a>
+
+    </ul>
+      
+    </div>
+  </div>
+</nav>
