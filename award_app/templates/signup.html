@@ -1,0 +1,48 @@
+{%extends 'posts/base.html'%}
+{{block.super}}
+{% block content %}
+
+<div style="background-color: rgb(101, 124, 126); padding-bottom: 45px;" class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div  class="col-md-4">
+            <div class="card">
+                {% if request.user.is_authenticated %} 
+                <h1>You are already Logged In</h1>
+                {% else%}
+                <div style="text-align: center; background-image: url('https://mdbootstrap.com/img/Photos/Others/pricing-table%20(7).jpg');"  class="card-header">
+                    <h2> <img float="right" src="https://mbtskoudsalg.com/images/award-transparent-real-5.png" alt="" height="90px"> Sign up</h2>
+                </div>
+                
+                   
+                    <div style="background-image: url('https://mdbootstrap.com/img/Photos/Others/pricing-table%20(7).jpg');" class="card-body">
+                            <form method="post">
+                                    {% csrf_token %}
+                                      {% for field in form %}
+                                      <p>
+                                        {{ field.label_tag }}<br>
+                                        {{ field }}
+                                        {% if field.help_text %}
+                                          <small style="display: none">{{ field.help_text }}</small>
+                                        {% endif %}
+                                        {% for error in field.errors %}
+                                          <p style="color: red">{{ error }}</p>
+                                        {% endfor %}
+                                      </p>
+                                      {% endfor %}
+                                    <button class="btn btn-primary" id="btn-2" type="submit">Sign up</button>
+                                  </form>
+                    </div>
+                    {% endif%}
+                    
+            </div>  
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+</div>
+  
+{% endblock %}
