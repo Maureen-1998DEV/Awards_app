@@ -1,0 +1,59 @@
+%extends "posts/base.html"%}
+{% load bootstrap5 %}
+{% block content %}
+<div class="container">
+   
+    <h3>{{post.project_name}}</h3>  <span style="font-family: 'Oregano', cursive;">Posted {{post.posted_time|timesince}} ago</span>
+
+    <h6 style="color: rgb(119, 230, 220);"> VOTES: Creativity:    {{ cre}}  Design:    {{de}}  Content:    {{con}}  Usability:    {{us}}</h6>
+  <div class="boo" style="text-align:center;">
+    <video width="850px" height="500px" autoplay controls>
+      <source src="{{post.recorded_demo.url}}" type="video/mp4">
+      <source src="{{post.recorded_demo.url}}" type="video/mkv">
+      <source src="{{post.recorded_demo.url}}" type="video/ogg">
+      Your browser does not support the video tag.
+    </video> 
+  </div>
+  <h5>Technologies used:  <span>{{ post.technologies_used}}</span></h5>
+  <a href="{{ post.project_url}}"> <button id="btn-2">View Site</button> </a>
+  <!-- <img src="{{post.image.url}}" alt=""> -->
+  <div class="row">
+    <div class="col-md-4">
+      <div style="width: 500px; background-color: #7b9c9e;" class="blah">
+        <div style="background-color: #698283;" class="card">
+          
+          <div class="card-header">
+            <h2>Vote for {{ post.project_name}}</h2>
+            
+          </div>
+            <form  action="/projects/{{post.id}}" method="post" enctype="multipart/form-data">
+              {%csrf_token%}
+              
+              {% bootstrap_form form%}
+              <input type="submit" class="btn btn-warning btn-sm" value="Post">
+          </form>
+        </div>
+    </div>
+    <div class="col-md-4">
+      
+    </div>
+    <div class="col-md-4">
+
+    </div>
+  </div>
+  
+    
+  
+  </div>
+  
+  
+  
+     {% block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {% bootstrap_javascript %} {% endblock %}
+  </div>
+</div>
+
+
+
+{% endblock %}

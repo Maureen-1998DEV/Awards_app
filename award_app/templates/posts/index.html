@@ -1,17 +1,14 @@
 {%extends 'posts/base.html'%}
+{%load static%}
 {% load bootstrap5 %}
 {% block content %}
+
 {{block.super}}
 
-<div>
-    <div style="padding: 150px;">
+
+    <div class="container " style="padding: 200px;">
         <h1  style='text-align: center;color: rgb(239, 242, 245); '>We Award The Best of The best</h1>
         <h2 style="text-align:center; color:rgb(253, 253, 253);">{{date|date:"l d-F Y"}}</h2>
-    </div>
-    
-    
-    <div class="container ">
-        
         <form class="form" role="search" action="{% url 'search_results' %}">
 
             <div class="input-group">
@@ -29,7 +26,6 @@
         
     </div>
     </div>
-</div>
     <div>
         <br>
         <br>
