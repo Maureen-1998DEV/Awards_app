@@ -1,0 +1,80 @@
+{%extends "posts/base.html"%}
+{% load staticfiles %}
+ {% load bootstrap5 %}}
+ {% block content %}
+{{ block.super }}
+
+
+<div  class="container">
+
+  <div class="row">
+    <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1"></div>
+    <div class="col-md-4 col-sm-4 col-lg-4 col-xs-4">
+      
+
+      {% if profile.profile_pic %}
+      <img  width="250px" height="250px" src="{{profile.profile_pic.url}}" alt="Avatar" class="img-responsive" style="border-radius: 50% ; padding: 0.15rem;  background: linear-gradient(to right bottom, #2cd88888, #2ec96970);">
+      {% else %}
+      <img  width="250px" height="250px" src="https://www.bristolbrewing.com/wp-content/uploads/2017/08/default-avatar.png" alt="Avatar" class="img-responsive" style="border-radius: 50% ; padding: 0.15rem;  background: linear-gradient(to right bottom, #2cd88888, #2ec96970);">
+  {% endif %}
+  
+    </div>
+
+    <div class="col-md-4 col-sm-4 col-lg-4 col-xs-4">
+      <div class="row">
+            <h1><strong> {{profile.user.username}}</strong></h1> <br> <br>        
+            
+                 
+            
+        {% if user.is_authenticated %}
+      
+        
+        <br>
+       
+      </div>
+<h5>{{profile.bio}}</h5>
+
+    </div>
+   
+        
+    
+  </div>
+  <h2> <strong>{{ post|length }}</strong> Project(s)</h2>
+  <hr>
+  <div class="row">
+    
+       
+          
+            
+              {% if post %}
+              
+
+                  {% for post in post %}
+                  
+                  <div class="col-md-3 col-sm-3 col-lg-3 col-xs-3" style="margin-right:20px">
+                    <div class="tumbnail">
+                    <img src="{{post.image.url}}" width="300px" height="300px" alt="">
+                  </div>
+              </div>
+                  {% endfor %}
+              
+              
+              {% else %}
+              <h1>No Projects</h1>
+              {% endif %}
+       
+         
+       
+      
+    
+     
+  </div>
+
+</div>
+{% else %}
+
+  <a class='btn btn-default' href="/accounts/login">Login</a>
+
+
+{% endif %} {% endblock %}
+© 2021 GitHub, Inc.
