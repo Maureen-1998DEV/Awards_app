@@ -1,5 +1,5 @@
 {%extends "posts/base.html"%}
-{% load staticfiles %}
+{% load static %}
  {% load bootstrap5 %}}
  {% block content %}
 {{ block.super }}
@@ -39,7 +39,7 @@
         
     
   </div>
-  <h2> <strong>{{ post|length }}</strong> Project(s)</h2>
+  <h1 style='color: whitesmoke; text-align: center;'> <strong>{{ post|length }}</strong> Project(s)</h1>
   <hr>
   <div class="row">
     
@@ -60,7 +60,7 @@
               
               
               {% else %}
-              <h1>No Projects</h1>
+              <h1 style='color: whitesmoke; text-align: center;'>No Projects</h1>
               {% endif %}
        
          

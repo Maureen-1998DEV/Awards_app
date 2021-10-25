@@ -89,7 +89,7 @@ def new_project(request):
 
     else:
         form = ProjectForm()
-    return render(request, 'new_project.html', {"form": form})
+    return render(request, 'project_new.html', {"form": form})
  
 def edit_profile(request):
     date = dt.date.today()
@@ -192,7 +192,7 @@ def profiles(request,id):
     profile = Profile.objects.get(user_id=id)
     post=Project.objects.filter(user_id=id)
                        
-    return render(request,'profile/profiles_each.html',{"profile":profile,"post":post})
+    return render(request,'profile/profiles.html',{"profile":profile,"post":post})
 
 def projects(request,id):
     date = dt.date.today()
@@ -242,4 +242,4 @@ def projects(request,id):
                                     user=request.user,post=post)
                     rating.save()
                     return redirect('/')
-    return render(request,'posts/projects.html',{"form":form, "de":de, "cre":cre, "con":con, "design":design, "us":us, "post":post,"date":date})
+    return render(request,'posts/project.html',{"form":form, "de":de, "cre":cre, "con":con, "design":design, "us":us, "post":post,"date":date})

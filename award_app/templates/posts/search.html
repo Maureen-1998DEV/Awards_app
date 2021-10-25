@@ -1,12 +1,12 @@
-{%extends 'all-posts/base.html'%}
-{% load bootstrap4 %}
+{%extends 'posts/base.html'%}
+{% load bootstrap5 %}
 {% load static%}
 
 {% block content %}
-<!-- <img src="https://media.giphy.com/media/uo6rcjwHSAFsQ/giphy.gif" alt="" height="100px"> -->
+
 <div  class="container">
     {% if users%}
-        <h2>Found for {{users | length}} results searched term {{message}}</h2>
+        <h2 style="text-align: center; color:white;">Found for {{users | length}} results searched term {{message}}</h2>
         
         <hr>
         <div class="contain col-sm-6 user">

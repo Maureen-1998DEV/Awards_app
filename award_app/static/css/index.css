@@ -4,11 +4,11 @@
     font-size:20px;
     padding:0;
     margin:0;
-    overflow: hidden;
+
 }
 body{
     background: url(../images/Wheat.png) no-repeat 0px 0px ;
     background-size:cover;
     filter:brightness(80%);
-    height: 800px;
+    height: 100%;
 }
