@@ -15,12 +15,12 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
-# Rest Api
-# from .permissions import IsAdminOrReadOnly
-# from rest_framework.response import Response
-# from rest_framework.views import APIView
-# from .serializer import ProjectSerializer,ProfileSerializer
-# from rest_framework import status
+#Rest Api
+from .permissions import IsAdminOrReadOnly
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializer import ProjectSerializer,ProfileSerializer
+from rest_framework import status
 
 def signup(request):
     if request.method == 'POST':
@@ -142,51 +142,51 @@ def comment(request,image_id):
             comment.save()
     return redirect('index')
 
-# class ProjectList(APIView):
-#     permission_classes = (IsAdminOrReadOnly,)
-#     def get(self, request, format=None):
-#         all_projects = Project.objects.all()
-#         serializers = ProjectSerializer(all_projects, many=True)
-#         return Response(serializers.data)
-#     def post(self, request, format=None):
-#         serializers = ProjectSerializer(data=request.data)
-#         if serializers.is_valid():
-#             serializers.save()
-#             return Response(serializers.data, status=status.HTTP_201_CREATED)
-#         return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
+class ProjectList(APIView):
+    permission_classes = (IsAdminOrReadOnly,)
+    def get(self, request, format=None):
+        all_projects = Project.objects.all()
+        serializers = ProjectSerializer(all_projects, many=True)
+        return Response(serializers.data)
+    def post(self, request, format=None):
+        serializers = ProjectSerializer(data=request.data)
+        if serializers.is_valid():
+            serializers.save()
+            return Response(serializers.data, status=status.HTTP_201_CREATED)
+        return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
 
-# class ProfileList(APIView):
+class ProfileList(APIView):
 
-#     def get(self,request,format=None):
-#         profile = Profile.objects.all()
-#         serialized = ProfileSerializer(profile,many=True)
-#         return Response(serialized.data)
+    def get(self,request,format=None):
+        profile = Profile.objects.all()
+        serialized = ProfileSerializer(profile,many=True)
+        return Response(serialized.data)
     
-#     def post(self,request,format=None):
-#         profile = ProfileSerializer(data=request.data)
-#         if profile.is_valid():
-#             profile.save()
-#             return Response(profile.data,status=status.HTTP_201_CREATED)
-#         return Response(profile.errors, status=status.HTTP_400_BAD_REQUEST)
+    def post(self,request,format=None):
+        profile = ProfileSerializer(data=request.data)
+        if profile.is_valid():
+            profile.save()
+            return Response(profile.data,status=status.HTTP_201_CREATED)
+        return Response(profile.errors, status=status.HTTP_400_BAD_REQUEST)
 
-# class ProfileDesc(APIView):
-#     def get_profile(self,pk):
-#         try:
-#             return Profile.objects.get(id=pk) 
-#         except Profile.DoesNotExist:
-#             return Http404
-#     def get(self,request,pk,format=None):
-#         profile = self.get_profile(pk)
-#         serialized = ProfileSerializer(profile)
-#         return Response(serialized.data)
+class ProfileDesc(APIView):
+    def get_profile(self,pk):
+        try:
+            return Profile.objects.get(id=pk) 
+        except Profile.DoesNotExist:
+            return Http404
+    def get(self,request,pk,format=None):
+        profile = self.get_profile(pk)
+        serialized = ProfileSerializer(profile)
+        return Response(serialized.data)
     
-#     def put(self,request,pk,format=None):
-#         profile = self.get_profile(pk)
-#         serialized = ProfileSerializer(profile,request.data)
-#         if serialized.is_valid():
-#             serialized.save()
-#             return Response(serialized.data)
-#         return Response(serialized.errors,status=status.HTTP_400_BAD_REQUEST)
+    def put(self,request,pk,format=None):
+        profile = self.get_profile(pk)
+        serialized = ProfileSerializer(profile,request.data)
+        if serialized.is_valid():
+            serialized.save()
+            return Response(serialized.data)
+        return Response(serialized.errors,status=status.HTTP_400_BAD_REQUEST)
 
 def profiles(request,id):
     profile = Profile.objects.get(user_id=id)

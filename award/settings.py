@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'award_app.apps.AwardAppConfig',
     'bootstrap5',
-]
+    'rest_framework',
+]    
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
