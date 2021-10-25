@@ -3,14 +3,14 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.core.validators import MinValueValidator,MaxValueValidator 
-
+from cloudinary.models import CloudinaryField
 # Create your models here.
 class Profile(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE,related_name='profile')
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
     bio =models.CharField(max_length=300)
-    profile_pic = models.ImageField(upload_to='profile/')
+    profile_pic = CloudinaryField('profile/')
     pub_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -44,7 +44,7 @@ def save_user_profile(sender, instance, **kwargs):
 class Project(models.Model):
     
     project_name = models.CharField(max_length=30)
-    image = models.ImageField(upload_to='images/')
+    image = CloudinaryField('images/')
     recorded_demo = models.FileField(upload_to='documents/' , null=True)
     project_description = models.CharField(max_length=3000)
     

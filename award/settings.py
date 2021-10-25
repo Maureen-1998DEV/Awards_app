@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
@@ -43,6 +45,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'tinymce',
+    'cloudinary'
 ]   
 
 MIDDLEWARE = [
@@ -132,5 +135,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-
+cloudinary.config( 
+  cloud_name = "maureen", 
+  api_key = "115873161646749", 
+  api_secret = "3Wt8tpdjQawo6Nt2LdOtv8kWCTQ" 
+)
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
