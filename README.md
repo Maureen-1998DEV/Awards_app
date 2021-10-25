@@ -1,5 +1,5 @@
 # Projects Name:
-##  INSTAGRAM_CLONE
+##  AWARD_APP
 
 ## Contributors
     - Maureen Ougo
@@ -7,7 +7,7 @@
 ### Contact Information
 ougomaureen051@gmail.com
 ## Description
-Instagram_clone is my second project in django that is similarliy as instagram website application
+Award_app is my third project in django that enables a User to post thier projects so as to be rewarded.
 
 ## Features
 - The home page allows user to login,create an Account  or activate the previous account:
