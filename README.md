@@ -16,7 +16,7 @@ Award_app is my third project in django that enables a User to post thier projec
 - Admin can upload images from a django dashboard
 
 ## View Live Site here
-View the complete site [here](https://ougo-instagram.herokuapp.com/)
+View the complete site [here](https://ougo-award.herokuapp.com/)
 
 ## Technologies Used
     - Python 3.8
