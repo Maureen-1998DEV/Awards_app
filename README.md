@@ -64,3 +64,8 @@ Create .env file and paste paste the following filling where appropriate:
 
 ## Known bugs
 No known bugs so far.
+
+# LICENCE
+[MIT]([Python3](https://www.python.org/)  ) 
+
+# &COPY;Awwwards 2021
