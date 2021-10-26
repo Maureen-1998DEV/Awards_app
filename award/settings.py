@@ -176,3 +176,4 @@ cloudinary.config(
   api_secret = "3Wt8tpdjQawo6Nt2LdOtv8kWCTQ" 
 )
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGIN_REDIRECT_URL = 'index'
