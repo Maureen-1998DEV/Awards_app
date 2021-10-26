@@ -46,19 +46,21 @@
       src="{{request.user.profile.profile_pic.url}}" alt="" width="50px" height="50px">  </section> <br>
   {% else %}
       <img style="border-radius: 50% ; padding: 0.15rem;  background: linear-gradient(to right bottom, #2cd88888, #2ec96970);" class=" img-circle"
-      src="https://www.bristolbrewing.com/wp-content/uploads/2017/08/default-avatar.png" alt="" width="50px" height="50px""> </section> <br>
+      src="https://www.bristolbrewing.com/wp-content/uploads/2017/08/default-avatar.png" alt="" width="50px" height="50px"> </section> <br>
   {% endif %}
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><h5>{{ user.username}}</h5>
+      
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <li><a class="dropdown-item" href="/profile/">Profile</a></li>
+      <li><a class="dropdown-item" href="/accounts/password/change">Change Password</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="/logout">Log Out</a></li>
+    </ul>
+  </li>
 
-  <div class="dropdown">
-          <button class="btn btn-sm dropdown-toggle" type="button" id="dropdownMenuButton btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <h6><a href="#" style="color: rgb(28, 64, 184);">{{ user.username}}</a></h6> 
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="/profile/">Profile</a>
-          <a class="dropdown-item" href="/accounts/password/change">Change Password</a>
-          <a class="dropdown-item" href="/logout">Log Out</a>
-          </div>
-  </div>
+  
   <a href="{% url 'new-project'%}"><button id="btn-2">Submit Project</button></a> 
   
   

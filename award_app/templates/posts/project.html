@@ -1,9 +1,9 @@
-%extends "posts/base.html"%}
+{%extends "posts/base.html"%}
 {% load bootstrap5 %}
 {% block content %}
 <div class="container">
    
-    <h3>{{post.project_name}}</h3>  <span style="font-family: 'Oregano', cursive;">Posted {{post.posted_time|timesince}} ago</span>
+    <h3 style="color: aliceblue;">{{post.project_name}}</h3>  <span style="font-family: 'Oregano', cursive;">Posted {{post.posted_time|timesince}} ago</span>
 
     <h6 style="color: rgb(119, 126, 230);"> VOTES: Creativity:    {{ cre}}  Design:    {{de}}  Content:    {{con}}  Usability:    {{us}}</h6>
   <div class="boo" style="text-align:center;">

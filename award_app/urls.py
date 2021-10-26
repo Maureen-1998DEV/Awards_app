@@ -1,4 +1,5 @@
 from django.conf.urls import url
+
 from . import views
 
 from django.conf import settings
@@ -10,7 +11,7 @@ urlpatterns=[
     url('^search/', views.search_results, name='search_results'),
     url('^signup/$', views.signup, name='signup'),
     url('^comment/(?P<image_id>\d+)', views.comment, name='comment'),
-    url('^new/project$', views.new_project, name='new-project'),
+    url('^project/new$', views.new_project, name='new-project'),
     url('^profile/$',views.profile,name='profile'),
     url('^profiles/(\d+)',views.profiles,name='profiles'),
     url('^projects/(\d+)',views.projects,name='projects'),

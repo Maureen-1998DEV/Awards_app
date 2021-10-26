@@ -1,6 +1,6 @@
 {%extends "posts/base.html"%}
 {% block content %}
-{% load bootstrap4 %}
+{% load bootstrap5 %}
 
 <div class="container">
   
@@ -16,15 +16,15 @@
       {% endif %}
   </div>
   <div class="col-md-7">
-      <h4>{{profile.user.username}}</h4>
-      <p>{{profile.bio}}</p>
+      <h4 style="color: aliceblue;">{{profile.user.username}}</h4>
+      <p style="color:white;">{{profile.bio}}</p>
       
       <button class="btn btn-outline-light"> <a style="color: white;" href="/edit/profile/"> Edit profile</a> <i class="fa fa-cog fa-spin" style="font-size:24px"></i></button>
   </div>
 </div>
 <hr>
 {% if posts%}
-<h3>My Projects</h3>
+<h3 style="color:white ;">My Projects</h3>
 <div class="row">
   {% for posts_items in posts%}
       <div class="col-md-4 col-sm-4 col-lg-4 col-xs-4">
@@ -35,7 +35,7 @@
   {% endfor%}
 </div>
   {% else%}
-<h1>No Projects Submitted</h1>
+<h1 style="color: aliceblue;">No Projects Submitted</h1>
 {% endif%}
 
   
