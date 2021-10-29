@@ -57,8 +57,14 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'tinymce',
     'cloudinary',
+<<<<<<< HEAD
     'registration',
     
+=======
+    'registration'
+    'rest_framework',
+    'rest_framework.authtoken',
+>>>>>>> bb2b4b47f875a7d779bddd6118d0557d3ef7546d
 ]   
 
 MIDDLEWARE = [
